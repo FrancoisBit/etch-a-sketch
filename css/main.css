@@ -24,4 +24,11 @@
     flex: 1;
     text-align: center;
     line-height: 50px;
+    transition: all 1s ease;
+}
+
+.new-color {
+    transform: scale(1.05);
+    border-color: #ffc600;
+    background-color: #ffc600;
 }
