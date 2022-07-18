@@ -1,19 +1,36 @@
-const flexboxScreen = document.querySelector(".flexbox-screen");
-console.log(flexboxScreen);
+function createGrid() {
+    const flexboxScreen = document.querySelector(".flexbox-screen");
 
-for(let i = 0; i < 16; i++) {
+    for(let i = 0; i < 16; i++) {
 
-    const divRow = document.createElement("div");
-    divRow.classList.add('row');  
-    divRow.style.border = "1px solid blue";
+        const divRow = document.createElement("div");
+        divRow.classList.add('row');  
+        divRow.style.border = "1px solid blue";
 
-    for(let j = 0; j < 16; j++) {
-        const divColumn = document.createElement("div");
-        divColumn.classList.add('column');  
-        divColumn.style.border = "1px solid blue";
-        divColumn.textContent = (i + 1) + " - " + (j + 1);
-        divRow.appendChild(divColumn);
+        for(let j = 0; j < 16; j++) {
+            const divColumn = document.createElement("div");
+            divColumn.classList.add('column');  
+            divColumn.style.border = "1px solid blue";
+            divColumn.textContent = (i + 1) + " - " + (j + 1);
+            divRow.appendChild(divColumn);
+        }
+
+        flexboxScreen.appendChild(divRow);
     }
-
-    flexboxScreen.appendChild(divRow);
 }
+
+function changecolor(e) {
+    console.log("hover");
+    e.target.classList.add("new-color")
+}
+
+function addHoverEventListener() {
+    const squares = document.querySelectorAll(".column");
+
+    squares.forEach(square => {
+        square.addEventListener("mouseenter", changecolor);
+    });
+}
+
+createGrid();
+addHoverEventListener();
