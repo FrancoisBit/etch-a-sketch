@@ -16,7 +16,7 @@ function askNumberOfSquaresPerSide() {
         }
         
         else {
-            alert("The maximum of squares per side is 100.")
+            alert("The maximum of squares per side is 100.");
         }
     }
 }
@@ -62,13 +62,13 @@ function createGrid(squaresPerSide) {
 }
 
 function changecolor(e) {
-    e.target.classList.add("new-color")
+    e.target.classList.add("new-color");
 }
 
 function addHoverEventListener() {
     const squares = document.querySelectorAll(".column");
 
-    squares.forEach(square => {
+    squares.forEach(function(square) {
         square.addEventListener("mouseenter", changecolor);
     });
 }
